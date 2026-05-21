@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 82%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+    
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 83% 35%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom styles for the LMS Portal */
+  .lms-header {
+    @apply bg-lms-darker border-b border-gray-800;
+  }
+
+  .lms-sidebar {
+    @apply bg-lms-darker border-r border-gray-800 h-screen fixed left-0 top-0 w-60 z-50;
+  }
+
+  .lms-sidebar-item {
+    @apply flex items-center p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors;
+  }
+
+  .lms-sidebar-item.active {
+    @apply text-white bg-lms-primary bg-opacity-20;
+  }
+
+  .lms-sidebar-icon {
+    @apply mr-3;
+  }
+
+  .lms-content {
+    @apply ml-60 p-6;
+  }
+
+  .lms-card {
+    @apply bg-lms-dark rounded-xl shadow-lg border border-gray-800 p-5 hover:border-lms-primary/30 transition-all;
+  }
+
+  .lms-button-primary {
+    @apply bg-lms-primary hover:bg-purple-600 text-white px-4 py-2 rounded-md transition-colors;
+  }
+
+  .lms-button-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors;
+  }
+
+  .lms-input {
+    @apply bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-lms-primary;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-gray-700 rounded-full overflow-hidden;
+  }
+
+  .progress-value {
+    @apply h-full bg-lms-primary rounded-full;
+  }
+}
